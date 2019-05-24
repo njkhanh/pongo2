@@ -94,6 +94,9 @@ func init() {
 
 	RegisterFilter("float", filterFloat)     // pongo-specific
 	RegisterFilter("integer", filterInteger) // pongo-specific
+
+	RegisterFilter("loop", filterLoop)         // for i in 5|loop
+	RegisterFilter("dateTime", filterDateTime) // unix time to date time: 1558725269|dateTime:dateFormat
 }
 
 func filterTruncatecharsHelper(s string, newLen int) string {
@@ -924,4 +927,28 @@ func filterYesno(in *Value, param *Value) (*Value, *Error) {
 
 	// no
 	return AsValue(choices[1]), nil
+}
+
+func filterDateTime(t *Value, f *Value) (*Value, *Error) {
+	tm := time.Unix(int64(t.Integer()), 0)
+	return AsValue(tm.Format(f.String())), nil
+}
+
+func filterLoop(in *Value, param *Value) (*Value, *Error) {
+	n := in.Integer()
+	var a []int
+
+	m := param.Integer()
+	start := 1
+	if m > 0 {
+		start = m
+	}
+
+	n = n + start
+
+	for i := start; i < n; i++ {
+		a = append(a, i)
+	}
+
+	return AsValue(a), nil
 }
