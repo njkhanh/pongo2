@@ -1,4 +1,4 @@
-module github.com/flosch/pongo2
+module github.com/njkhanh/pongo2
 
 require (
 	github.com/go-check/check v1.0.0-20180628173108-788fd7840127
