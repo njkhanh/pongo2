@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/flosch/pongo2"
+	"github.com/njkhanh/pongo2"
 	"github.com/juju/errors"
 )
 
