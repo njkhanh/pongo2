@@ -246,7 +246,7 @@ urlize
 {{ "florian-schlachter.de"|urlize|safe }}
 {% filter urlize:true|safe %}
 Please mail me at demo@example.com or visit mit on:
-- lorem ipsum github.com/flosch/pongo2 lorem ipsum
+- lorem ipsum github.com/njkhanh/pongo2 lorem ipsum
 - lorem ipsum http://www.florian-schlachter.de lorem ipsum
 - lorem ipsum https://www.florian-schlachter.de lorem ipsum
 - lorem ipsum https://www.florian-schlachter.de lorem ipsum
@@ -256,7 +256,7 @@ Please mail me at demo@example.com or visit mit on:
 --
 {% filter urlize:false|safe %}
 Please mail me at demo@example.com or visit mit on:
-- lorem ipsum github.com/flosch/pongo2 lorem ipsum
+- lorem ipsum github.com/njkhanh/pongo2 lorem ipsum
 - lorem ipsum http://www.florian-schlachter.de lorem ipsum
 - lorem ipsum https://www.florian-schlachter.de lorem ipsum
 - lorem ipsum https://www.florian-schlachter.de lorem ipsum
@@ -267,7 +267,7 @@ Please mail me at demo@example.com or visit mit on:
 urlizetrunc
 {% filter urlizetrunc:15|safe %}
 Please mail me at demo@example.com or visit mit on:
-- lorem ipsum github.com/flosch/pongo2 lorem ipsum
+- lorem ipsum github.com/njkhanh/pongo2 lorem ipsum
 - lorem ipsum http://www.florian-schlachter.de lorem ipsum
 - lorem ipsum https://www.florian-schlachter.de lorem ipsum
 - lorem ipsum https://www.florian-schlachter.de lorem ipsum

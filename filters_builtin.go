@@ -1,6 +1,6 @@
 package pongo2
 
-/* Filters that are provided through github.com/flosch/pongo2-addons:
+/* Filters that are provided through github.com/njkhanh/pongo2-addons:
    ------------------------------------------------------------------
 
    filesizeformat
