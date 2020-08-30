@@ -1,7 +1,7 @@
 # [pongo](https://en.wikipedia.org/wiki/Pongo_%28genus%29)2
 
 [![Join the chat at https://gitter.im/flosch/pongo2](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/flosch/pongo2)
-[![GoDoc](https://godoc.org/github.com/flosch/pongo2?status.svg)](https://godoc.org/github.com/flosch/pongo2)
+[![GoDoc](https://godoc.org/github.com/njkhanh/pongo2?status.svg)](https://godoc.org/github.com/njkhanh/pongo2)
 [![Build Status](https://travis-ci.org/flosch/pongo2.svg?branch=master)](https://travis-ci.org/flosch/pongo2)
 [![Backers on Open Collective](https://opencollective.com/pongo2/backers/badge.svg)](#backers) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fflosch%2Fpongo2.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fflosch%2Fpongo2?ref=badge_shield)
 
@@ -11,10 +11,10 @@ pongo2 is the successor of [pongo](https://github.com/flosch/pongo), a Django-sy
 
 Install/update using `go get` (no dependencies required by pongo2):
 ```
-go get -u github.com/flosch/pongo2
+go get -u github.com/njkhanh/pongo2
 ```
 
-Please use the [issue tracker](https://github.com/flosch/pongo2/issues) if you're encountering any problems with pongo2 or if you need help with implementing tags or filters ([create a ticket!](https://github.com/flosch/pongo2/issues/new)). 
+Please use the [issue tracker](https://github.com/njkhanh/pongo2/issues) if you're encountering any problems with pongo2 or if you need help with implementing tags or filters ([create a ticket!](https://github.com/njkhanh/pongo2/issues/new)). 
 
 ## First impression of a template
 
@@ -64,7 +64,7 @@ Please use the [issue tracker](https://github.com/flosch/pongo2/issues) if you'r
 
 ## Development status
 
-**Latest stable release**: v3.0 (`go get -u gopkg.in/flosch/pongo2.v3` / [`v3`](https://github.com/flosch/pongo2/tree/v3)-branch)
+**Latest stable release**: v3.0 (`go get -u gopkg.in/flosch/pongo2.v3` / [`v3`](https://github.com/njkhanh/pongo2/tree/v3)-branch)
 
 **Current development**: v4 (`master`-branch)
 
@@ -75,20 +75,20 @@ Please use the [issue tracker](https://github.com/flosch/pongo2/issues) if you'r
 | Topic                                | Status                                                                                                                                                                      |
 | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Django version compatibility:        | [1.7](https://docs.djangoproject.com/en/1.7/ref/templates/builtins/) ([cached docs](https://web.archive.org/web/20171025050612/https://docs.djangoproject.com/en/1.7/ref/)) |
-| *Missing* (planned) **filters**:     | none ([hints](https://github.com/flosch/pongo2/blob/master/filters_builtin.go#L3))                                                                                          |
-| *Missing* (planned) **tags**:        | none ([hints](https://github.com/flosch/pongo2/blob/master/tags.go#L3))                                                                                                     |
+| *Missing* (planned) **filters**:     | none ([hints](https://github.com/njkhanh/pongo2/blob/master/filters_builtin.go#L3))                                                                                          |
+| *Missing* (planned) **tags**:        | none ([hints](https://github.com/njkhanh/pongo2/blob/master/tags.go#L3))                                                                                                     |
 
-Please also have a look on the [caveats](https://github.com/flosch/pongo2#caveats) and on the [official add-ons](https://github.com/flosch/pongo2#official).
+Please also have a look on the [caveats](https://github.com/njkhanh/pongo2#caveats) and on the [official add-ons](https://github.com/njkhanh/pongo2#official).
 
 ## Features (and new in pongo2)
 
  * Entirely rewritten from the ground-up.
- * [Advanced C-like expressions](https://github.com/flosch/pongo2/blob/master/template_tests/expressions.tpl).
- * [Complex function calls within expressions](https://github.com/flosch/pongo2/blob/master/template_tests/function_calls_wrapper.tpl).
- * [Easy API to create new filters and tags](http://godoc.org/github.com/flosch/pongo2#RegisterFilter) ([including parsing arguments](http://godoc.org/github.com/flosch/pongo2#Parser))
+ * [Advanced C-like expressions](https://github.com/njkhanh/pongo2/blob/master/template_tests/expressions.tpl).
+ * [Complex function calls within expressions](https://github.com/njkhanh/pongo2/blob/master/template_tests/function_calls_wrapper.tpl).
+ * [Easy API to create new filters and tags](http://godoc.org/github.com/njkhanh/pongo2#RegisterFilter) ([including parsing arguments](http://godoc.org/github.com/njkhanh/pongo2#Parser))
  * Additional features:
-    * Macros including importing macros from other files (see [template_tests/macro.tpl](https://github.com/flosch/pongo2/blob/master/template_tests/macro.tpl))
-    * [Template sandboxing](https://godoc.org/github.com/flosch/pongo2#TemplateSet) ([directory patterns](http://golang.org/pkg/path/filepath/#Match), banned tags/filters)
+    * Macros including importing macros from other files (see [template_tests/macro.tpl](https://github.com/njkhanh/pongo2/blob/master/template_tests/macro.tpl))
+    * [Template sandboxing](https://godoc.org/github.com/njkhanh/pongo2#TemplateSet) ([directory patterns](http://golang.org/pkg/path/filepath/#Match), banned tags/filters)
 
 ## Recent API changes within pongo2
 
@@ -97,14 +97,14 @@ If you're using the `master`-branch of pongo2, you might be interested in this s
  * Function signature for tag execution changed: not taking a `bytes.Buffer` anymore; instead `Execute()`-functions are now taking a `TemplateWriter` interface.
  * Function signature for tag and filter parsing/execution changed (`error` return type changed to `*Error`).
  * `INodeEvaluator` has been removed and got replaced by `IEvaluator`. You can change your existing tags/filters by simply replacing the interface.
- * Two new helper functions: [`RenderTemplateFile()`](https://godoc.org/github.com/flosch/pongo2#RenderTemplateFile) and [`RenderTemplateString()`](https://godoc.org/github.com/flosch/pongo2#RenderTemplateString).
- * `Template.ExecuteRW()` is now [`Template.ExecuteWriter()`](https://godoc.org/github.com/flosch/pongo2#Template.ExecuteWriter)
+ * Two new helper functions: [`RenderTemplateFile()`](https://godoc.org/github.com/njkhanh/pongo2#RenderTemplateFile) and [`RenderTemplateString()`](https://godoc.org/github.com/njkhanh/pongo2#RenderTemplateString).
+ * `Template.ExecuteRW()` is now [`Template.ExecuteWriter()`](https://godoc.org/github.com/njkhanh/pongo2#Template.ExecuteWriter)
  * `Template.Execute*()` functions do now take a `pongo2.Context` directly (no pointer anymore).
 
 ## How you can help
 
- * Write [filters](https://github.com/flosch/pongo2/blob/master/filters_builtin.go#L3) / [tags] by forking pongo2 and sending pull requests
- * Write/improve code tests (use the following command to see what tests are missing: `go test -v -cover -covermode=count -coverprofile=cover.out && go tool cover -html=cover.out` or have a look on [gocover.io/github.com/flosch/pongo2](http://gocover.io/github.com/flosch/pongo2))
+ * Write [filters](https://github.com/njkhanh/pongo2/blob/master/filters_builtin.go#L3) / [tags] by forking pongo2 and sending pull requests
+ * Write/improve code tests (use the following command to see what tests are missing: `go test -v -cover -covermode=count -coverprofile=cover.out && go tool cover -html=cover.out` or have a look on [gocover.io/github.com/njkhanh/pongo2](http://gocover.io/github.com/njkhanh/pongo2))
  * Write/improve template tests (see the `template_tests/` directory)
  * Write middleware, libraries and websites using pongo2. :-)
 
@@ -112,7 +112,7 @@ If you're using the `master`-branch of pongo2, you might be interested in this s
 
 For a documentation on how the templating language works you can [head over to the Django documentation](https://docs.djangoproject.com/en/dev/topics/templates/) ([cached v1.7 docs here](https://web.archive.org/web/20171025050612/https://docs.djangoproject.com/en/1.7/ref/)). pongo2 aims to be compatible with it.
 
-You can access pongo2's API documentation on [godoc](https://godoc.org/github.com/flosch/pongo2).
+You can access pongo2's API documentation on [godoc](https://godoc.org/github.com/njkhanh/pongo2).
 
 ## Caveats 
 
@@ -137,8 +137,8 @@ You can access pongo2's API documentation on [godoc](https://godoc.org/github.co
 ## Official
 
  * [ponginae](https://github.com/flosch/ponginae) - A web-framework for Go (using pongo2).
- * [pongo2-tools](https://github.com/flosch/pongo2-tools) - Official tools and helpers for pongo2
- * [pongo2-addons](https://github.com/flosch/pongo2-addons) - Official additional filters/tags for pongo2 (for example a **markdown**-filter). They are in their own repository because they're relying on 3rd-party-libraries.
+ * [pongo2-tools](https://github.com/njkhanh/pongo2-tools) - Official tools and helpers for pongo2
+ * [pongo2-addons](https://github.com/njkhanh/pongo2-addons) - Official additional filters/tags for pongo2 (for example a **markdown**-filter). They are in their own repository because they're relying on 3rd-party-libraries.
 
 ## 3rd-party
 
@@ -181,7 +181,7 @@ fmt.Println(out) // Output: Hello Florian!
 package main
 
 import (
-	"github.com/flosch/pongo2"
+	"github.com/njkhanh/pongo2"
 	"net/http"
 )
 
@@ -246,7 +246,7 @@ Benchmarked on October 2nd 2014.
 ## Contributors
 
 This project exists thanks to all the people who contribute. 
-<a href="https://github.com/flosch/pongo2/graphs/contributors"><img src="https://opencollective.com/pongo2/contributors.svg?width=890&button=false" /></a>
+<a href="https://github.com/njkhanh/pongo2/graphs/contributors"><img src="https://opencollective.com/pongo2/contributors.svg?width=890&button=false" /></a>
 
 
 ## Backers
